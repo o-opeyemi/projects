@@ -34,6 +34,8 @@ jobs:
           npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify
 
       # Step 5: Commit and push the generated CSS file
+      - name: Ls 
+        run: ls
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
