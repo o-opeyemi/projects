@@ -35,14 +35,14 @@ jobs:
           mv tailwind.config.js node_modules/tailwindcss
       - name: Generate Tailwind CSS
         run: |
-          npx tailwindcss -i ./node_modules/tailwindcss/tailwind.css -o ./tailwind.css --minify
+          npx tailwindcss -i ./node_modules/tailwindcss/tailwind.css -o ./tailwinds.css
 
       # Step 5: Commit and push the generated CSS file
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ./tailwind.css
+          git add ./tailwinds.css
           git commit -m "Auto-generate Tailwind CSS"
           git push
         env:
