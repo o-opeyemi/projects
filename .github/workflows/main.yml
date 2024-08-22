@@ -30,7 +30,9 @@ jobs:
 
       # Step 4: Build the Tailwind CSS file
       - name: Ls 
-        run: ls node_modules/tailwindcss
+        run: |
+          ls node_modules/tailwindcss
+          mv tailwind.config.js node_modules/tailwindcss
       - name: Generate Tailwind CSS
         run: |
           npx tailwindcss -i ./node_modules/tailwindcss/tailwind.css -o ./tailwind.css --minify
